@@ -1,18 +1,12 @@
 package pl.aogiri.challenges.PieceSlidingPuzzleGame;
 
-import javafx.util.converter.DateTimeStringConverter;
 import pl.aogiri.challenges.PieceSlidingPuzzleGame.Game.Game;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Map;
 
 public class GameWindow extends JFrame {
