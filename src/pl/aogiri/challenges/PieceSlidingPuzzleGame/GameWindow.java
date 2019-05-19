@@ -145,17 +145,16 @@ public class GameWindow extends JFrame {
         game.increaseAction();
         gw.load();
         if (game.isVictory()){
-            JOptionPane.showMessageDialog(null, "Nice ... you won with " + game.getActions() + " moves!");
+            game.getTimer().stop();
+            JOptionPane.showMessageDialog(null, "Nice ... you won with " + game.getActions() + " moves in " + LocalTime.MIN.plusSeconds(t).toString() + "!");
         }
         if(t==0 || !game.getTimer().isRunning()){
-            game.setTimer(new Timer(1000, new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
+            game.setTimer(new Timer(1000, (x)-> {
                     System.out.println("Time");
                     t++;
                     gw.load();
                 }
-            }));
+            ));
             game.getTimer().start();
         }
     }
